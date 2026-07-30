@@ -1,7 +1,7 @@
 //smallest character among other characters in an array
 #include<iostream>
 using namespace std;
-int solve_bs(int n,int a[n],int k)
+int solve_bs(int n,int a[],int k)
 {
     int l=0;
     int r=n-1;
@@ -20,14 +20,14 @@ int solve_bs(int n,int a[n],int k)
         }
         else
         {
-
+            l=mid+1;
         }
     }
     if(res== -1)
     {
         return -1;
     }
-    return a[res];
+    return res;
 }
 int main()
 {
@@ -43,7 +43,7 @@ int main()
     cout<<"enter a value to get smallest of greatest element:\n";
     int key;
     cin>>key;
-    int val = solve_bs(n,a,k);
-    cout<<"the samllest element greater than "<<k<<" is "<< val;
+    int val = solve_bs(n,arr,key);
+    cout<<"the samllest element greater than "<< key <<" is "<< val;
     return 0;
 }
